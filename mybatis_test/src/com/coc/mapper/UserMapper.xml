@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.coc.mapper.UserMapper">
+	<!-- 查询 
+		parameterType: name参数类型
+		resultType 返回的参数类型
+		
+		id 需要与UserMapper 方法名一致
+	-->
+	<select id="findUserByUsername" parameterType="String" resultType="com.coco.entity.User">
+		select * from user where name=#{name}
+	</select>
+	
+	<select id="findUserList" resultType="com.coco.entity.User">
+		select * from user
+	</select>
+</mapper>
